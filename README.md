@@ -9,6 +9,7 @@ Create provisional commands for a docker image when built.
 
 ## Docker-compose commands
 - docker-compose up
+  - docker-compose up -d (runs docker-compose detached, to run in the background)
 
 ## Description
 - Dockerfile is the provisioning file that configs the build of the image.
