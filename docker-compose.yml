@@ -7,9 +7,9 @@ services:
     ports:
       - "3000:3000"
 
-  db:
-    build:
-      context: ./environment/db
-      dockerfile: Dockerfile
-    ports:
-      - "27017:27017"
+  # db:
+  #   build:
+  #     context: ./environment/db
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "27017:27017"
