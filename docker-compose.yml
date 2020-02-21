@@ -1,15 +1,21 @@
 version: "3.7"
 services:
   app:
+    container_name: app
     build:
-      context: ./environment/app
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile_app
     ports:
       - "3000:3000"
+    links:
+      - db
+    # environment: # Not working
+      # - DB_HOST=DB_HOST="mongodb://0.0.0.0:27017/posts"
 
-  # db:
-  #   build:
-  #     context: ./environment/db
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "27017:27017"
+  db:
+    container_name: mongodb
+    build:
+      context: .
+      dockerfile: Dockerfile_db
+    ports:
+      - "27017:27017"
